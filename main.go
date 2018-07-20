@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"os"
-	"path"
+	"path/filepath"
 	"strings"
 
 	"github.com/magicaltux/goupd"
@@ -14,7 +14,7 @@ func main() {
 	if err != nil {
 		exe = os.Args[0]
 	}
-	exe = strings.TrimSuffix(strings.ToLower(path.Base(exe)), ".exe")
+	exe = strings.TrimSuffix(strings.ToLower(filepath.Base(exe)), ".exe")
 
 	if exe == "goupd-any" {
 		log.Printf("invalid package name\n")
