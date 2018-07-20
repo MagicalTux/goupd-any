@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"os"
 	"path"
 	"strings"
@@ -17,15 +17,17 @@ func main() {
 	exe = strings.TrimSuffix(strings.ToLower(path.Base(exe)), ".exe")
 
 	if exe == "goupd-any" {
-		fmt.Printf("invalid package name\n")
+		log.Printf("invalid package name\n")
 		os.Exit(1)
 		return
 	}
 
+	log.Printf("using project name %s", exe)
+
 	goupd.PROJECT_NAME = exe
 	goupd.RunAutoUpdateCheck()
 
-	fmt.Printf("failed to get version\n")
+	log.Printf("failed to get version\n")
 	os.Exit(1)
 	return
 }
