@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/magicaltux/goupd"
+	"github.com/KarpelesLab/goupd"
 )
 
 func main() {
